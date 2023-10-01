@@ -1,5 +1,5 @@
 
-     Program epsilon v.6.7MaX starts on  1Oct2023 at 17:12:56 
+     Program epsilon v.6.7MaX starts on  1Oct2023 at 19:25:38 
 
      This program is part of the open-source Quantum ESPRESSO suite
      for quantum simulation of materials; please cite
@@ -9,9 +9,10 @@
      in publications or presentations arising from this work. More details at
      http://www.quantum-espresso.org/quote
 
-     Parallel version (MPI), running on     1 processors
+     Parallel version (MPI), running on     4 processors
 
      MPI processes distributed on     1 nodes
+     R & G space division:  proc/nbgrp/npool/nimage =       4
 
 
      Reading input file...
@@ -23,38 +24,40 @@
      ../tmp/si.save/
 
      IMPORTANT: XC functional enforced from input :
-     Exchange-correlation= PZ
-                           (   1   1   0   0   0   0   0)
+     Exchange-correlation= PBE
+                           (   1   4   3   4   0   0   0)
      Any further DFT definition will be discarded
      Please, verify this is what you really want
 
 
-     G-vector sticks info
+     Parallelization info
      --------------------
      sticks:   dense  smooth     PW     G-vecs:    dense   smooth      PW
-     Sum         583     583    187                 9257     9257    1639
+     Min         214     214     63                 4221     4221     684
+     Max         215     215     64                 4224     4224     688
+     Sum         859     859    253                16889    16889    2741
 
 
 
-     Fermi energy [eV] is:  5.75698
+     Fermi energy [eV] is:  5.93896
      The system is a dielectric...
      metallic system: redefining wmin =     0.000000
 
      Performing eps calculation...
 
-     xx,yy,zz plasmon frequences [eV] are:    17.329744694   17.329838922   17.330007889
+     xx,yy,zz plasmon frequences [eV] are:    17.282095754   17.282098350   17.282073248
 
      Writing output on file...
 
 
-     eps          :      0.05s CPU      0.06s WALL (       1 calls)
-     dipole_calc  :      0.03s CPU      0.03s WALL (      64 calls)
+     eps          :      0.11s CPU      0.12s WALL (       1 calls)
+     dipole_calc  :      0.07s CPU      0.08s WALL (      64 calls)
 
 
-     epsilon      :      0.16s CPU      0.17s WALL
+     epsilon      :      0.25s CPU      0.26s WALL
 
 
-   This run was terminated on:  17:12:57   1Oct2023            
+   This run was terminated on:  19:25:39   1Oct2023            
 
 =------------------------------------------------------------------------------=
    JOB DONE.

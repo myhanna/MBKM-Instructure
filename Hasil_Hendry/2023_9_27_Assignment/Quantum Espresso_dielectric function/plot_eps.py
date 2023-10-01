@@ -84,5 +84,5 @@ for i in range(3):
         axx.set_ylim(0, None)
 
 plt.tight_layout()
-plt.savefig(f"./Dielectric Constants of {name}.png", dpi = 600)
+plt.savefig(f"./Dielectric Functions of {name}.png", dpi = 600)
 plt.show()
