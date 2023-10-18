@@ -1,0 +1,13 @@
+&INPUTPP
+outdir      = './tmp/'
+prefix      = 'Si'
+calculation = 'eps'
+/
+
+&ENERGY_GRID
+smeartype   = 'gauss'
+intersmear  = 0.2
+wmin        = 0.0
+wmax        = 30.0
+nw          = 500
+/
