@@ -1,0 +1,8 @@
+&inputpp 
+   outdir      = './work/' 
+   prefix      = 'gr'
+   seedname    = 'gr'   
+   write_mmn   = .true.
+   write_amn   = .true.
+   write_unk   = .false.      
+/
