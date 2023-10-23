@@ -3,17 +3,20 @@ import matplotlib.pyplot as plt
 
 plt.style.use('sci.mplstyle')
 
-def plotit(folder_dir, name, prefix, savefig):
+def plotit(folder_dir, name, prefix, savefig = False, index_arr = "all"):
 
-    xyz = ["x", "y", "z"]
-    index_arr = np.array([[a + b + c for b in xyz for c in xyz] for a in xyz])
-    
-    fig, ax = plt.subplots(9, 3, figsize = (12, 28))
+    if not(isinstance(index_arr, np.ndarray)):
+        xyz = ["x", "y", "z"]
+        index_arr = np.array([[a + b + c for b in xyz for c in xyz] for a in xyz])
+        
+    shape = index_arr.shape
+
+    fig, ax = plt.subplots(shape[1], shape[0], figsize = (4 * shape[0], 3 * shape[1] + 1), squeeze = False)
     fig.suptitle(f"Nonlinear Shift of {name} \n Calculated with Wannier90", 
                  fontsize = 20)
     
-    for i in range(3):
-        for j in range(9):
+    for i in range(shape[0]):
+        for j in range(shape[1]):
             
             index = index_arr[i][j]
             
@@ -42,4 +45,10 @@ def plotit(folder_dir, name, prefix, savefig):
 plotit(folder_dir = "./nonlinear-shift", 
        name = "GaAs", 
        prefix = "GaAs", 
-       savefig = True)
+       savefig = True,
+       index_arr = np.array([["xyz"],["yzx"], ["zxy"]]))
+
+'''
+index_arr.shape[0] --> number of columns
+index_arr.shape[1] --> number of rows
+'''
