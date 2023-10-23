@@ -1,0 +1,40 @@
+&CONTROL
+    calculation   = 'scf',
+    prefix        = 'gr',
+    tprnfor       = .TRUE.,
+    tstress       = .TRUE.,
+    wf_collect    = .TRUE.,
+    etot_conv_thr =  1.0000000000d-05,
+    forc_conv_thr =  1.0000000000d-04,
+    pseudo_dir    = '../pseudo/',
+    outdir        = './work/'    
+/
+
+&SYSTEM
+    ibrav         = 4,
+    a             = 2.463924,
+    c             = 15.000000,
+    nat           = 2,
+    ntyp          = 1,
+    ecutwfc       = 60.0,
+    ecutrho       = 540.0, 
+    occupations   = 'smearing'
+    smearing      = 'mv'
+    degauss       = 0.02
+/
+
+&ELECTRONS
+  diagonalization  = 'david',
+  mixing_beta      = 0.15,
+  conv_thr         = 1.0000000000d-09
+/
+
+ATOMIC_SPECIES
+C      12.01070  C.pbe-n-rrkjus_psl.0.1.UPF
+
+ATOMIC_POSITIONS (crystal)
+C       0.333333   0.666667   0.500000
+C       0.666667   0.333333   0.500000
+
+K_POINTS (automatic)
+12  12  1   0  0  0
